@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text" : "Happiness Score of each country (2022)", "fontSize" : 20, "anchor" : "middle" },
+  "title": {"text" : "Happiness Score of each country (2022)", "fontSize" : 18, "anchor" : "middle" },
   "width": 1000,
-  "height": 600,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/js/ne_110m_admin_0_countries.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
