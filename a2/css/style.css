@@ -1,4 +1,143 @@
+h1 {
+    padding: 0 210px;
+    font-family: "Inria Sans", sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #585757ea;
+    text-align: left; 
+}
+
+h1 span {
+    font-size: 80px;
+    font-weight: bold; 
+    color: #ffbf00;
+}
+
+hr {
+    border: none; 
+    border-top: 3px solid #adacace0;
+    margin: 35px 12% 35px 12%;  
+}
+
+#total_countries{
+    padding-left: 240px;
+}
+
+p {
+    padding: 0 210px;
+    font-family: "Inria Sans", sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height:35px;
+    color: #4d4c4c;
+    text-align: left; 
+}
+.highlight {
+    font-weight: bold; 
+    color: #ffbf00;
+}
+
+.highlight_GDP {
+    font-weight: bold; 
+    color: #00537a;
+}
+.highlight_social {
+    font-weight: bold; 
+    color: #95A5A6;
+}
+.highlight_life {
+    font-weight: bold; 
+    color: #a5c357;
+}
+.highlight_freedom {
+    font-weight: bold; 
+    color: #ffd358;
+}
+.highlight_generosity {
+    font-weight: bold; 
+    color: #68a5d4;
+}
+.highlight_perception {
+    font-weight: bold; 
+    color: #ff9c0d;
+}
+
+.p1{
+    padding: 0 210px;
+    font-family: "Inria Sans", sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height:35px;
+    color: #4d4c4c;
+    text-align: left; 
+}
+
+#spaceline {
+    height: 20px;
+    width: 100%; 
+    background-color: transparent; 
+    border: none; 
+}
+
 #map{
+    padding: 0 210px;
     height: 400px;
     width: 100%;
 }
+
+#container{
+    padding: 0 210px;
+    height: 300px;
+    width: 100%;
+}
+
+#scatterplot1,#barchart{
+    padding: 0 210px;
+    height: 400px;
+    width: 100%;
+}
+
+#scatterplots{
+    height: 100%;
+    width: 100%;
+}
+
+#container1 {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    width: 100%; /* Ensure the container takes up the full width */
+    height: 100vh; /* Make the container full viewport height */
+}
+.first {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    margin: 0 0 0 100px; /* Add a left margin of 20px (adjust as needed) */
+    padding-left: 110px; /* Remove padding */
+    padding-right: 50px;
+}
+.second{
+    flex: 1;
+    margin: 0 150px 0 0; /* Add a left margin of 20px (adjust as needed) */
+}
+
+.p2{
+    margin: 0; /* Remove margin for the paragraph */
+    padding: 0; /* Remove padding for the paragraph */
+    font-family: "Inria Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height:35px;
+    color: #4d4c4c;
+    text-align: left; 
+}  
+  
+body {
+    overflow-x: hidden;
+}
+  
+  
