@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 200,
+    "height": 100,
+    "data": {
+      "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/data/WHR_cleaned.csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "transform": [
+      {"aggregate": [{"op": "average", "field": "Happiness score", "as": "AvgScore"}]}
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "text",
+          "align": "center", 
+          "baseline": "middle", 
+          "fill": "black", 
+          "fontSize": 24, 
+          "fontWeight": "bold", 
+          "font": "Inria Sans"
+        },
+        "encoding": {
+          "text": {"value": "Average Score"}
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "middle", 
+          "fill": "black", 
+          "fontSize": 24, 
+          "fontWeight": "normal", 
+          "font": "Inria Sans"
+        },
+        "encoding": {
+          "text": {"field": "AvgScore", "type": "quantitative","format":".2f"},
+          "y": {"value": 95} 
+        }
+      }
+    ],
+    "config": {
+      "view": {
+        "stroke": "transparent" 
+      }
+    }
+  }

@@ -1,0 +1,176 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/data/WHR_cleaned.csv"
+  },
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "layer": [
+            {
+              "mark": {"type": "point", "color": "#00537a"},
+              "encoding": {
+                "x": {"field": "GDP per capita", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"},
+                "tooltip": [
+                  { "field": "Country", "type": "nominal", "title": "Country" },
+                  { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+                  { "field": "GDP per capita", "type": "quantitative", "title": "GDP per capita" }
+                ]
+              }
+            },
+            {
+              "transform": [{"regression": "Happiness score", "on": "GDP per capita"}],
+              "mark": {"type": "line", "color": "#9e9e97"},
+              "encoding": {
+                "x": {"field": "GDP per capita", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"}
+              }
+            }
+          ]
+        },
+        {
+          "layer": [
+            {
+              "mark": {"type": "point", "color": "#95A5A6"},
+              "encoding": {
+                "x": {"field": "Social support", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative", "title": " "},
+                "tooltip": [
+                  { "field": "Country", "type": "nominal", "title": "Country" },
+                  { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+                  { "field": "Social support", "type": "quantitative", "title": "Social support" }
+                ]
+              }
+            },
+            {
+              "transform": [{"regression": "Happiness score", "on": "Social support"}],
+              "mark": {"type": "line", "color": "#9e9e97"},
+              "encoding": {
+                "x": {"field": "Social support", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "layer": [
+            {
+              "mark": {"type": "point", "color": "#a5c357"},
+              "encoding": {
+                "x": {"field": "Healthy life expectancy", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"},
+                "tooltip": [
+                  { "field": "Country", "type": "nominal", "title": "Country" },
+                  { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+                  { "field": "Healthy life expectancy", "type": "quantitative", "title": "Healthy life expectancy" }
+                ]
+              }
+            },
+            {
+              "transform": [{"regression": "Happiness score", "on": "Healthy life expectancy"}],
+              "mark": {"type": "line", "color": "#9e9e97"},
+              "encoding": {
+                "x": {"field": "Healthy life expectancy", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"}
+              }
+            }
+          ]
+        },
+        {
+          "layer": [
+            {
+              "mark": {"type": "point", "color": "#ffd358"},
+              "encoding": {
+                "x": {"field": "Freedom to make life choices", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative","title": " "},
+                "tooltip": [
+                  { "field": "Country", "type": "nominal", "title": "Country" },
+                  { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+                  { "field": "Freedom to make life choices", "type": "quantitative", "title": "Freedom to make life choices" }
+                ]
+              }
+            },
+            {
+              "transform": [{"regression": "Happiness score", "on": "Freedom to make life choices"}],
+              "mark": {"type": "line", "color": "#9e9e97"},
+              "encoding": {
+                "x": {"field": "Freedom to make life choices", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "layer": [
+            {
+              "mark": {"type": "point", "color": "#68a5d4"},
+              "encoding": {
+                "x": {"field": "Generosity", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"},
+                "tooltip": [
+                  { "field": "Country", "type": "nominal", "title": "Country" },
+                  { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+                  { "field": "Generosity", "type": "quantitative", "title": "Generosity" }
+                ]
+              }
+            },
+            {
+              "transform": [{"regression": "Happiness score", "on": "Generosity"}],
+              "mark": {"type": "line", "color": "#9e9e97"},
+              "encoding": {
+                "x": {"field": "Generosity", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"}
+              }
+            }
+          ]
+        },
+        {
+          "layer": [
+            {
+              "mark": {"type": "point", "color": "#ff9c0d"},
+              "encoding": {
+                "x": {"field": "Perceptions of corruption", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative", "title": " "},
+                "tooltip": [
+                  { "field": "Country", "type": "nominal", "title": "Country" },
+                  { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+                  { "field": "Perceptions of corruption", "type": "quantitative", "title": "Perceptions of corruption" }
+                ]
+              }
+            },
+            {
+              "transform": [{"regression": "Happiness score", "on": "Perceptions of corruption"}],
+              "mark": {"type": "line", "color": "#9e9e97"},
+              "encoding": {
+                "x": {"field": "Perceptions of corruption", "type": "quantitative"},
+                "y": {"field": "Happiness score", "type": "quantitative"}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {      
+    "axis": {
+      "titleFont": "Inria Sans, sans-serif",
+      "labelFont": "Inria Sans, sans-serif" 
+    },
+    "legend": {
+      "titleFont": "Inria Sans, sans-serif",
+      "labelFont": "Inria Sans, sans-serif" 
+    }
+  }
+}
+
+  

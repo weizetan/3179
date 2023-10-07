@@ -1,0 +1,94 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/data/WHR_cleaned.csv"
+    },
+    "layer" : [{
+      "mark": "point",
+      "params": [
+        {
+          "name": "FactorSelection",
+          "select": {"type": "point", "fields": ["Factor"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {
+          "fold": [
+            "GDP per capita",
+            "Social support",
+            "Healthy life expectancy",
+            "Freedom to make life choices",
+            "Generosity",
+            "Perceptions of corruption"
+          ],
+          "as": ["Factor", "Factor Value"]
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Factor Value",
+          "type": "quantitative",
+          "title": "Factors' Value",
+          "scale": {"domain": [0, 2.4]}
+        },
+        "y": {
+          "field": "Happiness score",
+          "type": "quantitative",
+          "title": "Happiness Score"
+        },
+        "color": {
+          "field": "Factor",
+          "type": "nominal",
+          "title": "Factors",
+          "scale": {
+            "domain": [
+              "GDP per capita",
+              "Social support",
+              "Healthy life expectancy",
+              "Freedom to make life choices",
+              "Generosity",
+              "Perceptions of corruption"
+            ],
+            "range": ["#00537a","#95A5A6","#a5c357","#ffd358","#68a5d4","#ff9c0d"]
+          }
+        },
+        "opacity": {
+          "condition": {"param": "FactorSelection", "value": 1},
+          "value": 0.2
+        },
+        "tooltip": [
+          { "field": "Country", "type": "nominal", "title": "Country" },
+          { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+          { "field": "Factor", "type": "nominal", "title": "Factor" },
+          { "field": "Factor Value", "type": "quantitative", "title": "Factor Value" }
+        ]
+      }
+    },
+    {
+      "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dy": 70,
+      "fontSize": 11
+      },
+      "encoding": {
+        "text": {
+            "value": "GDP per capita and happiness scores show a strong positive correlation."
+        }
+      }
+    }],
+    "config":{
+      "axis": {
+        "titleFont": "Inria Sans, sans-serif",
+        "labelFont": "Inria Sans, sans-serif" 
+      },
+      "legend": {
+        "titleFont": "Inria Sans, sans-serif",
+        "labelFont": "Inria Sans, sans-serif" 
+      }
+    }
+}

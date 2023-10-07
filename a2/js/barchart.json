@@ -1,0 +1,110 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "description": "Bar chart showing factors by selected country",
+    "data": {
+      "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/data/WHR_cleaned.csv",
+      "format": {"type": "csv"}
+    },
+    "params": [
+      {
+        "name": "Country_selection",
+        "value": "Australia", 
+        "bind": {
+          "input": "select",
+          "options": ["Afghanistan", "Albania", "Algeria", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", 
+                      "Belarus", "Belgium", "Benin", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Cambodia", 
+                      "Cameroon", "Canada", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", 
+                      "Cyprus", "Czechia", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Eswatini", "Ethiopia", 
+                      "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Guatemala", "Guinea", 
+                      "Honduras", "Hong Kong S.A.R. of China", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", 
+                      "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kosovo", "Kuwait", "Kyrgyzstan", 
+                      "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Lithuania", "Luxembourg", "Madagascar", "Malawi", 
+                      "Malaysia", "Mali", "Malta", "Mauritania", "Mauritius", "Mexico", "Moldova", "Mongolia", "Montenegro", "Morocco", 
+                      "Mozambique", "Myanmar", "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Cyprus", 
+                      "North Macedonia", "Norway", "Pakistan", "Palestinian Territories", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", 
+                      "Romania", "Russia", "Rwanda", "Saudi Arabia", "Senegal", "Serbia", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", 
+                      "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden", "Switzerland", "Taiwan Province of China", "Tajikistan", "Tanzania", "Thailand", 
+                      "Togo", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", 
+                      "Uzbekistan", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"],
+                      
+          "labels": ["Afghanistan", "Albania", "Algeria", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", 
+          "Belarus", "Belgium", "Benin", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Cambodia", 
+          "Cameroon", "Canada", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", 
+          "Cyprus", "Czechia", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Eswatini", "Ethiopia", 
+          "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Guatemala", "Guinea", 
+          "Honduras", "Hong Kong S.A.R. of China", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", 
+          "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kosovo", "Kuwait", "Kyrgyzstan", 
+          "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Lithuania", "Luxembourg", "Madagascar", "Malawi", 
+          "Malaysia", "Mali", "Malta", "Mauritania", "Mauritius", "Mexico", "Moldova", "Mongolia", "Montenegro", "Morocco", 
+          "Mozambique", "Myanmar", "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Cyprus", 
+          "North Macedonia", "Norway", "Pakistan", "Palestinian Territories", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", 
+          "Romania", "Russia", "Rwanda", "Saudi Arabia", "Senegal", "Serbia", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", 
+          "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden", "Switzerland", "Taiwan Province of China", "Tajikistan", "Tanzania", "Thailand", 
+          "Togo", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", 
+          "Uzbekistan", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"],
+
+          "name": "Country Selection : "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "datum.Country == Country_selection"
+      },
+      {
+        "fold": [
+          "GDP per capita",
+          "Social support",
+          "Healthy life expectancy",
+          "Freedom to make life choices",
+          "Generosity",
+          "Perceptions of corruption"
+        ],
+        "as": ["Factors", "value"]
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Factors",
+        "type": "nominal",
+        "sort": ["GDP per capita","Social support","Healthy life expectancy","Freedom to make life choices","Generosity","Perceptions of corruption"],
+        "title":""
+      },
+      "x": {"field": "value", "type": "quantitative", "scale": {"domain": [0, 2.3]}, "title": "Factors' Value"},
+      "color": {
+        "field": "Factors",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "GDP per capita",
+            "Social support",
+            "Healthy life expectancy",
+            "Freedom to make life choices",
+            "Generosity",
+            "Perceptions of corruption"
+          ],
+          "range": ["#00537a", "#95A5A6", "#a5c357", "#ffd358", "#68a5d4", "#ff9c0d"]
+        }
+      },
+      "tooltip": [
+        { "field": "Country", "type": "nominal", "title": "Country" },
+        { "field": "Happiness score", "type": "quantitative", "title": "Happiness Score" },
+        { "field": "Factors", "type": "nominal", "title": "Factor" },
+        { "field": "value", "type": "quantitative", "title": "Factor Value" }
+      ]
+    },
+    "config": {
+      "axis": {
+        "titleFont": "Inria Sans, sans-serif",
+        "labelFont": "Inria Sans, sans-serif" 
+      },
+      "legend": {
+        "titleFont": "Inria Sans, sans-serif",
+        "labelFont": "Inria Sans, sans-serif" 
+      }
+    }
+  }
+  
