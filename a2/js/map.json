@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text" : "Happiness Score of each country (2022)", "fontSize" : 18, "anchor" : "middle" },
-  "width": 1000,
+  "title": {"text" : "Happiness Score of each country (2022)", "fontSize" : 18, "anchor" : "middle" ,"font": "Inria Sans, sans-serif"},
+  "width": 900,
   "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/js/ne_110m_admin_0_countries.json",
@@ -24,7 +24,7 @@
         "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/js/oceans.json",
         "format": {"type": "topojson", "feature": "oceans"}
       },
-      "mark": {"type": "geoshape", "fill": "skyblue"}
+      "mark": {"type": "geoshape", "fill": "#bcd2e8"}
     },
     {
       "data": {
@@ -54,7 +54,7 @@
           "scale": {
             "type": "threshold",
             "domain": [2,4.5,7],
-            "range": ["white","#FFF992", "#FFE600", "#F0C200"]
+            "range": ["white","#FFF18d", "#ffd358", "#f5a201"]
           }
         },
         "tooltip": [
@@ -91,5 +91,14 @@
       }
     }
   ],
-  "config": {}
+  "config": {
+    "axis": {
+      "titleFont": "Inria Sans, sans-serif",
+      "labelFont": "Inria Sans, sans-serif" 
+    },
+    "legend": {
+      "titleFont": "Inria Sans, sans-serif",
+      "labelFont": "Inria Sans, sans-serif" 
+    }
+  }
 }
