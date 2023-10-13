@@ -11,95 +11,118 @@
       <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
       <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+      <!-- Google font -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+      <!-- Import pure.css -->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <script src="vega_lite.js"></script>
       <title>Happiness in 2022 </title>
    </head>
    <body>
-      <hr>
-      <h1>Redefining<br><span>HAPPINESS</span>  in 2022</h1>
-      <hr>
-      <p> Welcome to the <span class="highlight">2022 World Happiness Report</span>. This report explores happiness worldwide. 
-         It looks at how happy different countries are and why.
-         We collect data from <span class="highlight">146 countries</span> to understand what makes people happy. 
-         <br> We measure happiness on a scale from 1 to 10, where 1 represents the unhappiest and 10 the happiest. 
-         This measurement is based on factors like money, support from others, health, freedom, 
-         fairness, and kindness. Governments and organizations use this information to make decisions 
-         that can improve people's lives. So, let's dive into the happiness of the world in 2022!</p>
-    
+      <div class = "page">
+         <hr>
+         <h1>Redefining<br><span>HAPPINESS</span>  in 2022</h1>
+         <hr>
+         <p class="p1"> Welcome to the <span class="highlight">2022 World Happiness Report</span>. 
+            This report explores happiness worldwide. 
+            It looks at how happy different countries are and why.
+            We collect data from <span class="highlight">146 countries</span> to understand what makes people happy. 
+            <br> We measure happiness on a scale from 1 to 10, where 1 represents the unhappiest and 10 the happiest. 
+            This measurement is based on factors like money, support from others, health, freedom, 
+            fairness, and kindness. Governments and organizations use this information to make decisions 
+            that can improve people's lives. So, let's dive into the happiness of the world in 2022!</p>
       
-      <div id="total_countries"></div>
-      <div id="maxscore"></div>
-      <div id="averagescore"></div>
-      <div id="minscore"></div>
-      <div id="spaceline"></div>
-      <div id="spaceline"></div>
-      
-      <div id="map"></div>
+         <div class="pure-g">
+            <div class="pure-u-1-4">
+               <div id="total_countries" class="vis-container" style="margin-left: 10px;"></div>
+            </div>
+            <div class="pure-u-1-4">
+                 <div id="maxscore" class="vis-container" style="margin-left: 15px;"></div>
+            </div>
+            <div class="pure-u-1-4" >
+                 <div id="averagescore" class="vis-container" style="margin-left: 10px;"></div>
+            </div>
+            <div class="pure-u-1-4" >
+               <div id="minscore" class="vis-container" ></div>
+            </div>
+         </div>   
 
-      <div id="spaceline"></div>
+         <div id="map"></div>
+         <p class="p1">It's interesting to observe that <span class="highlight">Finland</span> leads among those countries with the <span class="highlight">highest</span> happiness score, 
+                     indicating that its residents enjoy more overall wellbeing and life satisfaction than those in other 
+                     nations throughout the world.</p>
+         <br>
 
-      <p class="p1">It's interesting to observe that <span class="highlight">Finland</span> leads among those countries with the <span class="highlight">highest</span> happiness score, 
-                    indicating that its residents enjoy more overall wellbeing and life satisfaction than those in other 
-                    nations throughout the world.</p>
-      
-      <div id="spaceline"></div>
-      <div id="container">
-         <div id="top5"></div>
-         <div id="last5"></div>
+
+         <div class="pure-g" >
+            <div class="pure-u-1-2" >
+               <div id="top5" class="vis-container" ></div>
+            </div>
+            <div class="pure-u-1-2">
+                 <div id="last5" class="vis-container" style="margin-right: 45px;"></div>
+            </div>
+         </div>  
+         
+         <hr>
+         <br>
+         <p class="title1">Measurement of Happiness Score :</p>
+ 
+         <p class="p1">We have identified six key factors that contribute to <span class= "highlight">Happiness Score</span> which are <br>
+            <br>
+            1. <span class="highlight_GDP">GDP per capita</span><br>
+            2. <span class="highlight_social">Social Support</span><br>
+            3. <span class="highlight_life">Healthy Life Expectancy</span><br>
+            4. <span class="highlight_freedom">Freedom of Life Choices</span><br>
+            5. <span class="highlight_generosity">Generosity</span><br>
+            6. <span class="highlight_perception">Perceptions of Corruption</span> <br>
+            <br>
+            These factors play a significant role in determining a country's overall happiness, with economic well-being, 
+            social support, health, freedom, generosity, and trust all contributing to the overall happiness level.<br></p>
+ 
+         
+         <div id="scatterplot1"></div>
+
+         <p class="p1">By carefully examining the graph above, we can see that <span class="highlight_GDP">GDP per capita </span>
+            is within the greatest range, indicating that it has a considerable impact on how the happiness score 
+            is determined.
+         </p>
+         <br>
+         <div class="pure-g">
+            <div class="pure-u-1-3" style="margin-right: 55px;">
+               <p class="p2" >We can observe that the first four factors (<span class="highlight_GDP">GDP per capita</span>, <span class="highlight_social">Social Support</span>, <span class="highlight_life">Healthy Life Expectancy</span>, 
+                  and <span class="highlight_freedom">Freedom of Life Choices</span>) exhibit a similar data pattern.They are positively correlated with happiness scores, meaning that when these factors are higher, happiness tends to be higher too.
+                  <br>
+                  <br>On the contrary, <span class="highlight_perception">Perceptions of Corruption</span> differs from these four factors. It has a negative correlation, meaning that when perceptions of corruption are lower, happiness scores tend to be higher.
+                  <br>
+                  <br>For <span class="highlight_generosity">Generosity</span>, has a weak correlation with happiness scores, meaning there isn't a strong link between generosity and happiness based on this data.</p>
+            </div>
+            <div class="pure-u-1-2">
+               <div id="scatterplots" class="vis-container" style="margin-top: 15px;"></div>
+            </div>
+         </div> 
+         <hr>
+
+
+         <p class="title"><br>Now, let's find out your own country !</p>
+         <div id="barchart"></div>
+         
+         <hr>
+         <br>
+         <p class="title1">Conclusion</p>
+         <p class="p1">In the world of happiness in 2022, Finland shines as the top-ranking country, capturing our attention. 
+            While the data suggests a notable correlation between GDP and happiness scores, it's a reminder that happiness is a 
+            multifaceted concept. Our visual journey, from global overviews to individual country insights, unveils the complexities 
+            of well-being. Through interactive maps, charts, and trends, we've embarked on a path to better understand the intricacies 
+            of global happiness. It's not just about numbers; it's about the many factors contributing to our shared pursuit of happiness.</p>
+         <br>
+
+         <hr>
+         <p class="metadata">Data source is from Kaggle.</p>
+
       </div>
-      
-      <div id="spaceline"></div>
-      <p class="p1">We have identified six key factors that contribute to <span class= "highlight">Happiness Score</span> :<br>
-         <br>
-         1. <span class="highlight_GDP">GDP per capita</span><br>
-         2. <span class="highlight_social">Social Support</span><br>
-         3. <span class="highlight_life">Healthy Life Expectancy</span><br>
-         4. <span class="highlight_freedom">Freedom of Life Choices</span><br>
-         5. <span class="highlight_generosity">Generosity</span><br>
-         6. <span class="highlight_perception">Perceptions of Corruption</span> <br>
-         <br>
-         These factors play a significant role in determining a country's overall happiness, with economic well-being, 
-         social support, health, freedom, generosity, and trust all contributing to the overall happiness level.<br></p>
-      
-      <div id="spaceline"></div>
-
-      <div id="scatterplot1"></div>
-
-      <p class="p1">By carefully examining the graph above, we can see that <span class="highlight_GDP">GDP per capita </span>
-         is within the greatest range, indicating that it has a considerable impact on how the happiness score 
-         is determined.
-      </p>
-
-      <div id="spaceline"></div>
-      
-      <div id="container1">
-         <div class="first">
-            <p class="p2">We can observe that the first four factors (<span class="highlight_GDP">GDP per capita</span>, <span class="highlight_social">Social Support</span>, <span class="highlight_life">Healthy Life Expectancy</span>, 
-               and <span class="highlight_freedom">Freedom of Life Choices</span>) exhibit a similar data pattern. All the data points for these factors are situated 
-               at the higher end of their respective trend lines, indicating a strong positive correlation. In simpler terms, when 
-               these factors are higher, the happiness score tends to be higher as well.
-               <br>
-               <br>On the other hand, <span class="highlight_perception">Perceptions of Corruption</span> stands out from these four factors. Its data points are located at 
-               the lower end of the trend line, suggesting a negative correlation. In other words, when perceptions of corruption are 
-               lower, happiness scores tend to be higher.
-               <br>
-               <br>For <span class="highlight_generosity">Generosity</span>, the trend line is nearly horizontal, indicating a weak correlation with happiness scores. 
-               In simple terms, there isn't a strong connection between generosity and happiness scores based on this data.</p>
-          </div>
-         <div class="second">
-           <div id="scatterplots"></div>
-         </div>
-       </div>
-       
-      <div id="spaceline"></div>
-      <div id="spaceline"></div>
-      <p class="p1">Now, let's find out your own country !
-      </p>
-      <div id="barchart"></div>
-      <div id="spaceline"></div>
-      <div id="spaceline"></div>
    </body>
 </html>
