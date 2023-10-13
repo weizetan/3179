@@ -22,7 +22,7 @@
             },
             {
               "transform": [{"regression": "Happiness score", "on": "GDP per capita"}],
-              "mark": {"type": "line", "color": "#9e9e97"},
+              "mark": {"type": "line", "color": "#9b9a9a"},
               "encoding": {
                 "x": {"field": "GDP per capita", "type": "quantitative"},
                 "y": {"field": "Happiness score", "type": "quantitative"}
@@ -46,7 +46,7 @@
             },
             {
               "transform": [{"regression": "Happiness score", "on": "Social support"}],
-              "mark": {"type": "line", "color": "#9e9e97"},
+              "mark": {"type": "line", "color": "#9b9a9a"},
               "encoding": {
                 "x": {"field": "Social support", "type": "quantitative"},
                 "y": {"field": "Happiness score", "type": "quantitative"}
@@ -74,7 +74,7 @@
             },
             {
               "transform": [{"regression": "Happiness score", "on": "Healthy life expectancy"}],
-              "mark": {"type": "line", "color": "#9e9e97"},
+              "mark": {"type": "line", "color": "#9b9a9a"},
               "encoding": {
                 "x": {"field": "Healthy life expectancy", "type": "quantitative"},
                 "y": {"field": "Happiness score", "type": "quantitative"}
@@ -98,7 +98,7 @@
             },
             {
               "transform": [{"regression": "Happiness score", "on": "Freedom to make life choices"}],
-              "mark": {"type": "line", "color": "#9e9e97"},
+              "mark": {"type": "line", "color": "#9b9a9a"},
               "encoding": {
                 "x": {"field": "Freedom to make life choices", "type": "quantitative"},
                 "y": {"field": "Happiness score", "type": "quantitative"}
@@ -126,7 +126,7 @@
             },
             {
               "transform": [{"regression": "Happiness score", "on": "Generosity"}],
-              "mark": {"type": "line", "color": "#9e9e97"},
+              "mark": {"type": "line", "color": "#9b9a9a"},
               "encoding": {
                 "x": {"field": "Generosity", "type": "quantitative"},
                 "y": {"field": "Happiness score", "type": "quantitative"}
@@ -150,7 +150,7 @@
             },
             {
               "transform": [{"regression": "Happiness score", "on": "Perceptions of corruption"}],
-              "mark": {"type": "line", "color": "#9e9e97"},
+              "mark": {"type": "line", "color": "#9b9a9a"},
               "encoding": {
                 "x": {"field": "Perceptions of corruption", "type": "quantitative"},
                 "y": {"field": "Happiness score", "type": "quantitative"}
@@ -164,11 +164,15 @@
   "config": {      
     "axis": {
       "titleFont": "Inria Sans, sans-serif",
-      "labelFont": "Inria Sans, sans-serif" 
+      "labelFont": "Inria Sans, sans-serif",
+      "titleColor": "#4d4c4c",
+      "labelColor": "#4d4c4c"  
     },
     "legend": {
       "titleFont": "Inria Sans, sans-serif",
-      "labelFont": "Inria Sans, sans-serif" 
+      "labelFont": "Inria Sans, sans-serif",
+      "titleColor": "#4d4c4c",
+      "labelColor": "#4d4c4c"  
     }
   }
 }

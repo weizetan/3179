@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 370,
-  "height": 200,
-  "title":{"text" : "Top 5 Happiest Countries", "fontSize" : 15, "dy":-20 ,"font": "Inria Sans, sans-serif"},
+  "width": 100,
+  "height": 220,
+  "title":{"text" : "Top 5 Happiest Countries", "fontSize" : 15, "dx":95, "dy":-20 ,"font": "Inria Sans, sans-serif","color":"#4d4c4c"},
   "data": {
     "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/data/WHR_cleaned.csv"
   },
@@ -18,12 +18,12 @@
       "field": "Country",
       "type": "nominal",
       "sort": ["Finland", "Denmark", "Iceland", "Switzerland", "Netherlands"],
-      "title": "Country"
+      "title": "Countries"
     },
     "x": {
       "field": "Happiness score",
       "type": "quantitative",
-      "scale": {"range": [0, 350]},
+      "scale": {"domain": [0, 8], "range": [0, 320]},
       "title": "Happiness Score"
     },
     "tooltip":[
@@ -45,7 +45,7 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 5,
+        "dx": -35,
         "color": "#444444"
       },
       "encoding": {"text": {"field": "Happiness score", "type": "quantitative"}}
@@ -55,11 +55,15 @@
     "view": {"stroke": null},      
     "axis": {
       "titleFont": "Inria Sans, sans-serif",
-      "labelFont": "Inria Sans, sans-serif" 
+      "labelFont": "Inria Sans, sans-serif",
+      "titleColor": "#4d4c4c",
+      "labelColor": "#4d4c4c"  
     },
     "legend": {
       "titleFont": "Inria Sans, sans-serif",
-      "labelFont": "Inria Sans, sans-serif" 
+      "labelFont": "Inria Sans, sans-serif",
+      "titleColor": "#4d4c4c",
+      "labelColor": "#4d4c4c"  
     }
   }
 }

@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 370,
-    "height": 200,
-    "title":{"text" : "Last 5 Happiest Countries", "fontSize" : 15, "dy":-20 ,"font": "Inria Sans, sans-serif"},
+    "width": 100,
+    "height": 220,
+    "title":{"text" : "Last 5 Happiest Countries", "fontSize" : 15, "dx":95, "dy":-20 ,"font": "Inria Sans, sans-serif","color":"#4d4c4c"},
     "data": {"url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/data/WHR_cleaned.csv"},
     "transform": [
       {
@@ -18,8 +18,8 @@
       }
     ],
     "encoding": {
-      "y": {"field": "Country", "type": "nominal", "sort": ["Botswana", "Rwanda", "Zimbabwe", "Lebanon", "Afghanistan"]},
-      "x": {"field": "Happiness score", "type": "quantitative", "scale": {"domain": [0, 8], "range": [0, 350]}},
+      "y": {"field": "Country", "type": "nominal", "sort": ["Botswana", "Rwanda", "Zimbabwe", "Lebanon", "Afghanistan"],"title" : " "},
+      "x": {"field": "Happiness score", "type": "quantitative", "scale": {"domain": [0, 8], "range": [0, 320]}},
       "tooltip":[
         {"field": "Country","type": "nominal", "title": "Country"},
         {"field":"Rank","type": "ordinal", "title": "Rank"},
@@ -39,7 +39,7 @@
           "type": "text",
           "align": "left",
           "baseline": "middle",
-          "dx": 5,
+          "dx": -35,
           "color": "#444444"
         },
         "encoding": {
@@ -51,11 +51,15 @@
       "view": {"stroke": null},
       "axis": {
         "titleFont": "Inria Sans, sans-serif",
-        "labelFont": "Inria Sans, sans-serif" 
+        "labelFont": "Inria Sans, sans-serif",
+        "titleColor": "#4d4c4c",
+        "labelColor": "#4d4c4c"  
       },
       "legend": {
         "titleFont": "Inria Sans, sans-serif",
-        "labelFont": "Inria Sans, sans-serif" 
+        "labelFont": "Inria Sans, sans-serif",
+        "titleColor": "#4d4c4c",
+        "labelColor": "#4d4c4c"  
       }
     }
   }

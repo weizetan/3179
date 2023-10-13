@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text" : "Happiness Score of each country (2022)", "fontSize" : 18, "anchor" : "middle" ,"font": "Inria Sans, sans-serif"},
-  "width": 900,
-  "height": 600,
+  "title": {"text" : "Happiness Score of each country (2022)", "fontSize" : 18, "anchor" : "middle" ,"font": "Inria Sans, sans-serif","color":"#4d4c4c"},
+  "width": 800,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/js/ne_110m_admin_0_countries.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -16,7 +16,7 @@
           "as": "note"
         }
       ],
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "#c3cbd1", "stroke": "white"},
       "encoding": {"tooltip": {"field": "note"}}
     },
     {
@@ -24,14 +24,14 @@
         "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/js/oceans.json",
         "format": {"type": "topojson", "feature": "oceans"}
       },
-      "mark": {"type": "geoshape", "fill": "#bcd2e8"}
+      "mark": {"type": "geoshape", "fill": "#c1dbf3"}
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/weizetan/3179/main/a2/js/ne_110m_graticules_30.json",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
-      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+      "mark": {"type": "geoshape", "fill": null, "stroke": "#c3cbd1"}
     },
     {
       "transform": [
@@ -98,7 +98,9 @@
     },
     "legend": {
       "titleFont": "Inria Sans, sans-serif",
-      "labelFont": "Inria Sans, sans-serif" 
+      "labelFont": "Inria Sans, sans-serif",
+      "titleColor": "#4d4c4c",
+      "labelColor": "#4d4c4c" 
     }
   }
 }
